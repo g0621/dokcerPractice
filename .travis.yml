@@ -3,7 +3,9 @@ services:
     - docker
 
 before_install:
-    - docker build -t gyans/dockerPractice -f Dockerfile.dev .
+    - docker-compose build
+    # - docker build -t gyans/docker_practice -f Dockerfile.dev .  
+    # above not supported due to react-scripts 3.41
 
 script:
-    - docker run gyans/dockerPractice npm run test -- --coverage
+    - docker run gyans/docker_practice npm run test -- --coverage

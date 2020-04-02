@@ -1,9 +1,10 @@
-# CI=true or stdin_open: true to make rectct-scripts 3.41 work
+# CI=true or stdin_open: true to make react-scripts 3.41 work
 # https://github.com/facebook/create-react-app/issues/8688
 
 version: '3'
 services: 
     front-end:
+        image: gyans/docker_practice
         restart: always
         tty: true
         ports:
