@@ -9,3 +9,16 @@ before_install:
 
 script:
     - docker run gyans/docker_practice npm run test -- --coverage
+
+# deploy:
+#     provider: elasticbeanstalk
+#     region: "us-east-2"
+#     app: "docker_practice"
+#     env: "Docker-env"
+#     bucket_name: "name_to_be_added"
+#     bucket_path: "docker_practice"
+#     on:
+#         branch: master
+#     access_key_id: $AWS_ACCESS_KEY
+#     secret_access_key:
+#         secure: "$AWS_SECRET_KEY"
