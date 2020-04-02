@@ -1,0 +1,25 @@
+# CI=true or stdin_open: true to make rectct-scripts 3.41 work
+# https://github.com/facebook/create-react-app/issues/8688
+
+version: '3'
+services: 
+    front-end:
+        restart: always
+        tty: true
+        ports:
+            - "8080:3000"
+        volumes: 
+            - /app/node_modules
+            - .:/app
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev
+    # tests:
+    #     build: 
+    #         context: .
+    #         dockerfile: Dockerfile.dev
+    #     tty: true
+    #     volumes: 
+    #         - /app/node_modules
+    #         - .:/app
+    #     command: ["npm","run","test"]
